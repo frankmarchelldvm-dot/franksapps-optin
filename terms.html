@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FranksApps — SMS Terms &amp; Conditions</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Albert+Sans:wght@400;500;600&display=swap');
+  :root{
+    --ink:#1c1a17;--paper:#f4efe7;--card:#fbf8f2;--accent:#9a4221;
+    --accent-soft:#c9742f;--line:#d8cfc0;--muted:#6c6358;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Albert Sans',sans-serif;background:var(--paper);color:var(--ink);
+    line-height:1.65;padding:36px 18px;
+    background-image:radial-gradient(circle at 18% 0%,rgba(201,116,47,.09),transparent 45%),radial-gradient(circle at 92% 100%,rgba(154,66,33,.07),transparent 42%);
+  }
+  .wrap{max-width:680px;margin:0 auto}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:42px 38px 36px;box-shadow:0 18px 50px -28px rgba(28,26,23,.5);
+    position:relative;overflow:hidden;
+  }
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--accent),var(--accent-soft))}
+  .brand{display:flex;align-items:center;gap:11px;margin-bottom:28px}
+  .mark{
+    width:38px;height:38px;border-radius:10px;background:linear-gradient(140deg,var(--accent),var(--accent-soft));
+    color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:21px;
+  }
+  .brand b{font-family:'Fraunces',serif;font-weight:600;font-size:19px}
+  .brand span{display:block;font-size:12px;color:var(--muted);letter-spacing:.4px;text-transform:uppercase}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:34px;line-height:1.12;letter-spacing:-.4px;margin-bottom:6px}
+  .eff{color:var(--muted);font-size:13px;margin-bottom:26px}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:19px;margin:26px 0 8px;letter-spacing:-.2px}
+  p{margin-bottom:12px;font-size:15px}
+  ul{margin:0 0 12px 20px;font-size:15px}
+  li{margin-bottom:6px}
+  a{color:var(--accent);text-underline-offset:2px}
+  .highlight{
+    background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);
+    border-radius:10px;padding:16px 18px;margin:14px 0;font-size:14.5px;
+  }
+  .highlight strong{color:var(--accent)}
+  footer{margin-top:30px;text-align:center;font-size:11.5px;color:var(--muted)}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <div class="brand">
+      <div class="mark">F</div>
+      <div><b>FranksApps</b><span>SMS Terms &amp; Conditions</span></div>
+    </div>
+
+    <h1>SMS Terms &amp; Conditions</h1>
+    <p class="eff">Effective date: June 19, 2026</p>
+
+    <p>These SMS Terms &amp; Conditions govern the text messaging program operated by <strong>FranksApps, LLC</strong> ("FranksApps," "we," "us"). By opting in, you agree to these terms.</p>
+
+    <h2>Program description</h2>
+    <p>When you opt in, FranksApps sends you recurring automated text messages, including account alerts and service notifications related to your FranksApps beta account.</p>
+
+    <h2>How to opt in</h2>
+    <p>You enroll by submitting your mobile number and checking the consent box on our sign-up page, or by otherwise providing express written consent. Consent is not a condition of purchasing any goods or services.</p>
+
+    <h2>Message frequency</h2>
+    <p>Message frequency varies based on your account activity and the notifications you have enabled.</p>
+
+    <h2>Cost</h2>
+    <p>FranksApps does not charge for the messages, but <strong>message and data rates may apply</strong> depending on your mobile carrier and plan.</p>
+
+    <h2>How to opt out</h2>
+    <p>You can cancel at any time by replying <strong>STOP</strong> to any message. After you send STOP, we will send a single confirmation that you have been unsubscribed, and you will receive no further messages unless you re-enroll. You can resubscribe by replying <strong>START</strong> or signing up again.</p>
+
+    <h2>Help</h2>
+    <p>For help, reply <strong>HELP</strong> to any message or email <a href="mailto:frank.marchell.dvm@gmail.com">frank.marchell.dvm@gmail.com</a>.</p>
+
+    <h2>Carriers</h2>
+    <div class="highlight">
+      Carriers are <strong>not liable</strong> for delayed or undelivered messages. Message delivery is subject to effective transmission by your mobile carrier and is not guaranteed.
+    </div>
+
+    <h2>Privacy</h2>
+    <p>Your information is handled as described in our <a href="privacy.html">Privacy Policy</a>. We do not sell your information, and your mobile opt-in data and consent are never shared with third parties for marketing.</p>
+
+    <h2>Changes to these terms</h2>
+    <p>We may update these terms from time to time. The current version will always be posted here with a revised effective date.</p>
+
+    <h2>Contact</h2>
+    <p>Questions? Email <a href="mailto:frank.marchell.dvm@gmail.com">frank.marchell.dvm@gmail.com</a>.</p>
+    <p>FranksApps, LLC</p>
+  </div>
+  <footer>© <span id="yr"></span> FranksApps, LLC · <a href="https://frankmarchelldvm-dot.github.io/franksapps-optin/" target="_blank" rel="noopener">https://frankmarchelldvm-dot.github.io/franksapps-optin/</a></footer>
+</div>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
