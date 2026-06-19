@@ -3,103 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FranksApps — SMS Notifications Sign-Up</title>
+<title>PetMedSchedule — SMS Notifications Sign-Up</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Albert+Sans:wght@400;500;600&display=swap');
-
-  :root{
-    --ink:#1c1a17;
-    --paper:#f4efe7;
-    --card:#fbf8f2;
-    --accent:#9a4221;
-    --accent-soft:#c9742f;
-    --line:#d8cfc0;
-    --muted:#6c6358;
-  }
+  :root{--ink:#1c1a17;--paper:#f4efe7;--card:#fbf8f2;--accent:#9a4221;--accent-soft:#c9742f;--line:#d8cfc0;--muted:#6c6358;}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    font-family:'Albert Sans',sans-serif;
-    background:var(--paper);
-    color:var(--ink);
-    line-height:1.55;
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:32px 18px;
-    background-image:radial-gradient(circle at 20% 0%,rgba(201,116,47,.10),transparent 45%),radial-gradient(circle at 90% 100%,rgba(154,66,33,.08),transparent 40%);
-  }
+  body{font-family:'Albert Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px 18px;background-image:radial-gradient(circle at 20% 0%,rgba(201,116,47,.10),transparent 45%),radial-gradient(circle at 90% 100%,rgba(154,66,33,.08),transparent 40%);}
   .wrap{width:100%;max-width:560px}
-  .card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:18px;
-    padding:38px 34px 30px;
-    box-shadow:0 18px 50px -28px rgba(28,26,23,.5);
-    position:relative;
-    overflow:hidden;
-  }
-  .card::before{
-    content:"";position:absolute;top:0;left:0;right:0;height:5px;
-    background:linear-gradient(90deg,var(--accent),var(--accent-soft));
-  }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:38px 34px 30px;box-shadow:0 18px 50px -28px rgba(28,26,23,.5);position:relative;overflow:hidden;}
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--accent),var(--accent-soft));}
   .brand{display:flex;align-items:center;gap:11px;margin-bottom:26px}
-  .mark{
-    width:38px;height:38px;border-radius:10px;
-    background:linear-gradient(140deg,var(--accent),var(--accent-soft));
-    color:#fff;display:flex;align-items:center;justify-content:center;
-    font-family:'Fraunces',serif;font-weight:600;font-size:21px;
-  }
+  .mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(140deg,var(--accent),var(--accent-soft));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:21px;}
   .brand b{font-family:'Fraunces',serif;font-weight:600;font-size:19px;letter-spacing:.2px}
   .brand span{display:block;font-size:12px;color:var(--muted);letter-spacing:.4px;text-transform:uppercase}
-  h1{
-    font-family:'Fraunces',serif;font-weight:600;font-size:30px;
-    line-height:1.15;margin-bottom:10px;letter-spacing:-.3px;
-  }
-  .lede{color:var(--muted);font-size:15px;margin-bottom:24px;max-width:46ch}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:30px;line-height:1.15;margin-bottom:10px;letter-spacing:-.3px;}
+  .lede{color:var(--muted);font-size:15px;margin-bottom:24px;max-width:48ch}
   label.fld{display:block;font-size:13px;font-weight:600;margin:0 0 6px;letter-spacing:.2px}
-  input[type=text],input[type=tel]{
-    width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;
-    background:#fff;font-family:inherit;font-size:15px;color:var(--ink);margin-bottom:16px;
-    transition:border-color .15s,box-shadow .15s;
-  }
+  input[type=text],input[type=tel]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;font-family:inherit;font-size:15px;color:var(--ink);margin-bottom:16px;transition:border-color .15s,box-shadow .15s;}
   input:focus{outline:none;border-color:var(--accent-soft);box-shadow:0 0 0 3px rgba(201,116,47,.18)}
-  .consent{
-    display:flex;gap:12px;align-items:flex-start;
-    background:#fff;border:1px solid var(--line);border-radius:12px;
-    padding:15px 16px;margin:4px 0 18px;
-  }
+  .consent{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px 16px;margin:4px 0 18px;}
   .consent input{margin-top:3px;width:18px;height:18px;flex:0 0 auto;accent-color:var(--accent)}
   .consent label{font-size:13.5px;color:var(--ink);line-height:1.5}
   .consent a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
   .note{font-size:12px;color:var(--muted);margin-bottom:20px}
-  button{
-    width:100%;padding:14px;border:none;border-radius:11px;cursor:pointer;
-    background:var(--accent);color:#fff;font-family:'Albert Sans',sans-serif;
-    font-size:15px;font-weight:600;letter-spacing:.3px;transition:transform .12s,background .15s;
-  }
+  button{width:100%;padding:14px;border:none;border-radius:11px;cursor:pointer;background:var(--accent);color:#fff;font-family:'Albert Sans',sans-serif;font-size:15px;font-weight:600;letter-spacing:.3px;transition:transform .12s,background .15s;}
   button:hover{background:#83361a;transform:translateY(-1px)}
   button:disabled{background:#bcae9b;cursor:not-allowed;transform:none}
-  .disclosures{
-    margin-top:24px;padding-top:20px;border-top:1px dashed var(--line);
-    font-size:12.5px;color:var(--muted);
-  }
+  .disclosures{margin-top:24px;padding-top:20px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--muted);}
   .disclosures h2{font-family:'Fraunces',serif;font-size:14px;color:var(--ink);margin-bottom:8px;font-weight:600}
   .disclosures p{margin-bottom:8px}
   .kw{font-weight:600;color:var(--accent)}
-  .sample{
-    background:#fff;border:1px solid var(--line);border-radius:10px;
-    padding:11px 13px;font-size:13px;color:var(--ink);margin:6px 0 4px;
-  }
+  .sample{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13px;color:var(--ink);margin:6px 0 4px;}
   .confirm{display:none;text-align:center;padding:14px 0}
   .confirm.show{display:block;animation:rise .4s ease both}
   .form.hide{display:none}
   @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-  .tick{
-    width:56px;height:56px;border-radius:50%;margin:0 auto 16px;
-    background:linear-gradient(140deg,var(--accent),var(--accent-soft));
-    display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px;
-  }
+  .tick{width:56px;height:56px;border-radius:50%;margin:0 auto 16px;background:linear-gradient(140deg,var(--accent),var(--accent-soft));display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px;}
   .confirm h2{font-family:'Fraunces',serif;font-size:23px;margin-bottom:8px}
   .confirm .sample{text-align:left;margin-top:16px}
   footer{margin-top:18px;text-align:center;font-size:11.5px;color:var(--muted)}
@@ -110,16 +49,13 @@
 <div class="wrap">
   <div class="card">
     <div class="brand">
-      <div class="mark">F</div>
-      <div>
-        <b>FranksApps</b>
-        <span>SMS Notifications</span>
-      </div>
+      <div class="mark">P</div>
+      <div><b>PetMedSchedule</b><span>SMS Notifications</span></div>
     </div>
 
     <div class="form" id="form">
-      <h1>Get text updates from FranksApps</h1>
-      <p class="lede">Sign up to receive SMS notifications and account alerts from FranksApps, LLC during our beta program.</p>
+      <h1>Get text updates from PetMedSchedule</h1>
+      <p class="lede">Sign up to receive account and service notifications from PetMedSchedule during our beta. PetMedSchedule is a text-messaging tool for veterinary practices, operated by FranksApps, LLC.</p>
 
       <label class="fld" for="name">Name</label>
       <input type="text" id="name" placeholder="Your name" autocomplete="name">
@@ -130,8 +66,8 @@
       <div class="consent">
         <input type="checkbox" id="agree" aria-describedby="agreetext">
         <label id="agreetext" for="agree">
-          I agree to receive recurring automated text messages (account alerts and notifications)
-          from <b>FranksApps, LLC</b> at the number provided. Consent is not a condition of any purchase.
+          I agree to receive recurring automated text messages (account and service notifications)
+          from <b>PetMedSchedule</b> (FranksApps, LLC) at the number provided. Consent is not a condition of any purchase.
           Message frequency varies. Message &amp; data rates may apply. Reply <span class="kw">STOP</span> to
           cancel, <span class="kw">HELP</span> for help. See our
           <a href="https://frankmarchelldvm-dot.github.io/franksapps-optin/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and
@@ -145,23 +81,22 @@
 
       <div class="disclosures">
         <h2>What to expect</h2>
-        <p>Message type: account notifications and service alerts related to your FranksApps beta account.</p>
+        <p>Message type: account confirmations, status and service alerts, and updates related to your PetMedSchedule beta account.</p>
         <p>Sample message:</p>
-        <div class="sample">FranksApps: Your beta access is confirmed. Reply HELP for help, STOP to unsubscribe.</div>
-        <p style="margin-top:10px"><span class="kw">HELP</span> → "FranksApps: For help, contact <a href="mailto:frank.marchell.dvm@gmail.com">frank.marchell.dvm@gmail.com</a>. Msg &amp; data rates may apply." &nbsp;·&nbsp; <span class="kw">STOP</span> → "FranksApps: You're unsubscribed and will receive no more messages. Reply START to resubscribe."</p>
+        <div class="sample">PetMedSchedule: Your beta account is active. Reply HELP for help, STOP to unsubscribe.</div>
+        <p style="margin-top:10px"><span class="kw">HELP</span> &rarr; "PetMedSchedule: For help, contact <a href="mailto:frank.marchell.dvm@gmail.com">frank.marchell.dvm@gmail.com</a>. Msg &amp; data rates may apply." &nbsp;&middot;&nbsp; <span class="kw">STOP</span> &rarr; "PetMedSchedule: You're unsubscribed and will receive no more messages. Reply START to resubscribe."</p>
       </div>
     </div>
 
     <div class="confirm" id="confirm">
-      <div class="tick">✓</div>
+      <div class="tick">&check;</div>
       <h2>You're signed up</h2>
       <p style="color:var(--muted);font-size:14px">A confirmation text is on its way. This is the message you'll receive:</p>
-      <div class="sample">FranksApps: You're now opted in to receive notifications. Msg frequency varies. Msg &amp; data rates may apply. Reply HELP for help, STOP to cancel.</div>
+      <div class="sample">PetMedSchedule: You're now opted in to receive account notifications. Msg frequency varies. Msg &amp; data rates may apply. Reply HELP for help, STOP to cancel.</div>
     </div>
   </div>
-  <footer>© <span id="yr"></span> FranksApps, LLC · <a href="https://frankmarchelldvm-dot.github.io/franksapps-optin/" target="_blank" rel="noopener">https://frankmarchelldvm-dot.github.io/franksapps-optin/</a></footer>
+  <footer>&copy; <span id="yr"></span> PetMedSchedule &mdash; a service of FranksApps, LLC &middot; <a href="https://petmedschedule.com/" target="_blank" rel="noopener">petmedschedule.com</a></footer>
 </div>
-
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
   var agree = document.getElementById('agree');
